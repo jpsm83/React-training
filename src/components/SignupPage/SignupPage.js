@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function SignupPage() {
+export default function SignupPage() {
     const [ validEmail, setValidEmail ] = useState(false); 
     const [ strongPassword, setStrongPassword ] = useState(false); 
     const [ nationality, setNationality ] = useState('Unknown');
@@ -12,7 +12,6 @@ function SignupPage() {
     }
 
     const handleEmailChange = (event) => {
-        console.log(event.target.value)
         if (event.target.value.length > 5) {
             setValidEmail(true);
         }
@@ -22,7 +21,6 @@ function SignupPage() {
     }
 
     const handlePasswordChange = (event) => {
-        console.log(event.target.value)
         if (event.target.value.length > 10) {
             setStrongPassword(true);
         }
@@ -46,12 +44,7 @@ function SignupPage() {
                 <option value="en">English</option>
                 <option selected value="de">German</option>
             </select>
-            {/* <input type="password"></input> */}
-            {/* <select></select> */}
             <p>Hi, are you {nationality}?</p>
-            <p></p>
         </div>
     )
 }
-
-export default SignupPage
